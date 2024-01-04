@@ -2,7 +2,7 @@ import { PokemonType } from 'pokenode-ts';
 import { colors } from '../styles/colors';
 
 export const getTypeColor = (pokemonType: PokemonType[]): string => {
-  const type = pokemonType[0].type.name;
+  const type: string = pokemonType[0]?.type?.name || '';
 
   switch (type) {
     case 'normal':

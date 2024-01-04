@@ -24,7 +24,7 @@ const PokemonCard = ({ pokemon }: any) => {
   return (
     <div
       className="max-w-sm rounded overflow-hidden shadow-lg"
-      style={{ backgroundColor: getTypeColor(pokemonDetails.types) }}
+      style={{ backgroundColor: getTypeColor(pokemonDetails?.types) }}
     >
       <img
         className="w-full"
