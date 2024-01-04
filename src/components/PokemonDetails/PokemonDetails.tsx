@@ -26,8 +26,7 @@ const PokemonDetails = () => {
   return (
     <div className="container">
       {!isLoading ? (
-        <div className="grid grid-col-2">
-          <h1>Pokemon Details works!</h1>
+        <div className="grid grid-cols-2">
           <PokemonDetailTable {...pokemon} />
         </div>
       ) : (
