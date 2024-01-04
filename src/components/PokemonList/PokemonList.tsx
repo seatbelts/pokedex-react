@@ -22,7 +22,7 @@ const PokemonList = () => {
   }, [scroll]);
 
   return (
-    <div>
+    <div className="container">
       {
         <div className="grid grid-cols-3 gap-3">
           {pokemonList.map((pokemon: NamedAPIResource, index: number) => {

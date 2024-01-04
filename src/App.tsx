@@ -5,11 +5,13 @@ import PokemonList from './components/PokemonList/PokemonList';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<PokemonList />} />
-      </Routes>
-    </BrowserRouter>
+    <div style={{ backgroundImage: `url(/bg.png)` }}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<PokemonList />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
