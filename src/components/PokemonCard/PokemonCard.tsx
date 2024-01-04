@@ -5,6 +5,7 @@ import axios, { AxiosResponse } from 'axios';
 import { capitalize } from '../../utils/capitaliza';
 
 import { Pokemon, PokemonType } from 'pokenode-ts';
+import { getTypeColor } from '../../utils/typeColors';
 
 const PokemonCard = ({ pokemon }: any) => {
   const [pokemonDetails, setPokemonDetails] = useState({} as Pokemon);
@@ -21,7 +22,10 @@ const PokemonCard = ({ pokemon }: any) => {
   }, []);
 
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg">
+    <div
+      className="max-w-sm rounded overflow-hidden shadow-lg"
+      style={{ backgroundColor: getTypeColor(pokemonDetails.types) }}
+    >
       <img
         className="w-full"
         src={pokemonDetails?.sprites?.front_default || ''}
