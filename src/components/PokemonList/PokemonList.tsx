@@ -29,7 +29,7 @@ const PokemonList = () => {
           {pokemonList.map((pokemon: NamedAPIResource, index: number) => {
             return (
               <Link key="details" to={`/details/${pokemon.name}`}>
-                <PokemonCard key={index} pokemon={pokemon} />
+                <PokemonCard key={index} {...pokemon} />
               </Link>
             );
           })}

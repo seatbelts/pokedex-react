@@ -4,11 +4,11 @@ import { useEffect, useState } from 'react';
 import axios, { AxiosResponse } from 'axios';
 import { capitalize } from '../../utils/capitaliza';
 
-import { Pokemon, PokemonType } from 'pokenode-ts';
+import { NamedAPIResource, Pokemon, PokemonType } from 'pokenode-ts';
 import { getTypeColor } from '../../utils/typeColors';
 import NoData from '../NoData/NoData';
 
-const PokemonCard = ({ pokemon }: any) => {
+const PokemonCard = (pokemon: NamedAPIResource) => {
   const [pokemonDetails, setPokemonDetails] = useState<Pokemon>();
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
