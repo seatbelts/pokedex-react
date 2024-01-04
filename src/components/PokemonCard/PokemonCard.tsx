@@ -9,7 +9,8 @@ import { getTypeColor } from '../../utils/typeColors';
 import NoData from '../NoData/NoData';
 
 const PokemonCard = ({ pokemon }: any) => {
-  const [pokemonDetails, setPokemonDetails] = useState({} as Pokemon);
+  const [pokemonDetails, setPokemonDetails] = useState<Pokemon>();
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     void fetchPokemonDetail();
@@ -19,6 +20,7 @@ const PokemonCard = ({ pokemon }: any) => {
         pokemon.url
       );
       setPokemonDetails(response.data);
+      setIsLoading(false);
     }
   }, []);
 
@@ -31,7 +33,7 @@ const PokemonCard = ({ pokemon }: any) => {
         ),
       }}
     >
-      {pokemonDetails ? (
+      {!isLoading ? (
         <div>
           <img
             className="w-full"
