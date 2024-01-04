@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import PokemonDetailTable from '../PokemonDetailTable/PokemonDetailTable';
 import NoData from '../NoData/NoData';
+import StatsTable from '../StatsTable/StatsTable';
 
 const PokemonDetails = () => {
   let { pokemonName } = useParams();
@@ -28,6 +29,8 @@ const PokemonDetails = () => {
       {!isLoading ? (
         <div className="grid grid-cols-2">
           <PokemonDetailTable {...pokemon} />
+
+          <StatsTable {...pokemon} />
         </div>
       ) : (
         <NoData />

@@ -8,7 +8,7 @@ const PokemonDetailTable = (pokemon: Pokemon) => {
 
   return (
     <div
-      className="container grid grid-flow-row auto-rows-max w-1/4 text-center p-2"
+      className="container grid grid-flow-row auto-rows-max w-2/4 text-center p-2"
       style={{
         backgroundColor: getTypeColor(globalType ?? ''),
       }}
