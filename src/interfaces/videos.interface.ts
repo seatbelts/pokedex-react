@@ -1,3 +1,8 @@
+/**
+ * @description An custom interface that describes the object of Video from VideoRequestI
+ *
+ * @interface VideoI
+ */
 export interface VideoI {
   id: string;
   title: string;
@@ -18,6 +23,11 @@ export interface VideoI {
   durationString: string;
 }
 
+/**
+ * @description An custom interface that describes the object from the response to fetch the list of videos
+ *
+ * @interface VideoResponseI
+ */
 export interface VideoResponseI {
   channels: any[];
   playlists: any[];

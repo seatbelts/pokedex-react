@@ -5,6 +5,11 @@ import { VideoI, VideoResponseI } from '../../interfaces/videos.interface';
 import YouTube from 'react-youtube';
 import Loader from '../Loader/Loader';
 
+/**
+ * @description This component renders a Youtube Video related to the Pokemon displayed
+ *
+ * @returns {ReactNode} A React element that renders a video.
+ */
 const PokemonVideo = ({ name }: Pokemon) => {
   const [video, setVideo] = useState({} as VideoI);
   const [isLoading, setIsLoading] = useState(true);
@@ -20,6 +25,13 @@ const PokemonVideo = ({ name }: Pokemon) => {
     },
   };
 
+  /**
+   * @description This function retrieves data of videos, and set the first result as the video to be displayed
+   *
+   * @async
+   * @function fetchVideo
+   * @returns {Promise<void>} A Promise function
+   */
   async function fetchVideo(): Promise<void> {
     try {
       const response: AxiosResponse<VideoResponseI> =
