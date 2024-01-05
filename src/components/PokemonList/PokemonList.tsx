@@ -7,13 +7,25 @@ import { Link } from 'react-router-dom';
 import { PokemonListI } from '../../interfaces/pokemon-list.interface';
 import Loader from '../Loader/Loader';
 
+/**
+ * @description This component renders a list of Pokemons.
+ *
+ * @returns {ReactNode} A React element that renders a table with list of Pokemons.
+ */
 const PokemonList = () => {
   const [pokemonList, setPokemonList] = useState([] as PokemonListI[]);
   const [nextUrl, setNextUrl] = useState<string>('');
   const [totalCount, setTotalCount] = useState<number>(100);
   const [isLoading, setIsLoading] = useState(true);
 
-  async function fetchPokemonDetails(
+  /**
+   * @description This function retrieves appropiate details of Pokemons based on their base url
+   *
+   * @function fetchPokemonDetails
+   * @param {NamedAPIResourceList} pokemons A list of Pokemons resources
+   * @returns {Promise<Pokemon[]>} A Promise containing Pokemon details
+   */
+  function fetchPokemonDetails(
     pokemons: NamedAPIResourceList
   ): Promise<Pokemon[]> {
     return Promise.all(
@@ -26,6 +38,14 @@ const PokemonList = () => {
     );
   }
 
+  /**
+   * @description This function retrieves a paginated list of Pokemons, and set the proper states with the results of fetchPokemonList
+   *
+   * @async
+   * @function fetchPokemonList
+   * @param {string} url A url, can be the next url, or fallback to a default url if not provide
+   * @returns {Promise<void>} A Promise function
+   */
   async function fetchPokemonList(
     url = 'https://pokeapi.co/api/v2/pokemon/?limit=12'
   ): Promise<void> {
@@ -52,7 +72,12 @@ const PokemonList = () => {
       setTotalCount(data.count);
     }
   }
-
+  /**
+   * @description This callback listens to a scroll change, and fetch new data on a proper scroll
+   *
+   * @callback window.onscroll
+   * @returns {void} A void function
+   */
   window.onscroll = () => {
     if (pokemonList.length > totalCount) {
       return;

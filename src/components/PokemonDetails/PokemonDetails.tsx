@@ -6,6 +6,12 @@ import PokemonDetailTable from '../PokemonDetailTable/PokemonDetailTable';
 import StatsTable from '../StatsTable/StatsTable';
 import Loader from '../Loader/Loader';
 
+/**
+ * @description This component renders details page with more info about a Pokemon.
+ *
+ * @function PokemonDetails A react component
+ * @returns {ReactNode} A React element that renders detail page of a Pokemon.
+ */
 const PokemonDetails = () => {
   let { pokemonName } = useParams();
   const [pokemon, setPokemon] = useState({} as Pokemon);
@@ -15,6 +21,11 @@ const PokemonDetails = () => {
   useEffect(() => {
     void fetchPokemonByName();
 
+    /**
+     * This function retrieves the data regrading a specific Pokemon, and set the appropiate states.
+     *
+     * @returns {Promise<void>} Fetches a promise.
+     */
     async function fetchPokemonByName(): Promise<void> {
       const response: AxiosResponse<Pokemon> = await axios.get<Pokemon>(
         `https://pokeapi.co/api/v2/pokemon/${pokemonName ?? 'unknown'}`

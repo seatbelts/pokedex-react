@@ -3,6 +3,13 @@ import { Pokemon, PokemonAbility, PokemonType } from 'pokenode-ts';
 import { getTypeColor } from '../../utils/typeColors';
 import { capitalize } from '../../utils/capitaliza';
 
+/**
+ * @description This component renders a table with detailed information for a Pokemon.
+ *
+ * @function PokemonDetailTable A react component
+ * @param {Pokemon} pokemon Pokemon details.
+ * @returns {ReactNode} A React element that renders a table with detailed information about a Pokemon.
+ */
 const PokemonDetailTable = (pokemon: Pokemon) => {
   const globalType = pokemon?.types[0]?.type?.name;
 

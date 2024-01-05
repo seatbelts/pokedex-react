@@ -22,6 +22,12 @@ ChartJS.register(
   Legend
 );
 
+/**
+ * @description This component graph regarding Pokemon States with graph.js
+ *
+ * @function StatsTable A react component
+ * @returns {ReactNode} A React element that renders a Pokemon Stats.
+ */
 const StatsTable = (pokemon: Pokemon) => {
   const globalType: string = pokemon?.types[0]?.type.name;
 

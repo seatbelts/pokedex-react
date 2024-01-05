@@ -5,6 +5,13 @@ import { Pokemon, PokemonType } from 'pokenode-ts';
 import { getTypeColor } from '../../utils/typeColors';
 import { PokemonListI } from '../../interfaces/pokemon-list.interface';
 
+/**
+ * @description This component renders a card with small details regarding the pokemon.
+ *
+ * @function PokemonCard A react component
+ * @param {PokemonListI} pokemon Pokemon details mapped accordingly.
+ * @returns {ReactNode} A React element that renders a greeting to the user.
+ */
 const PokemonCard = (pokemon: PokemonListI) => {
   const [pokemonDetails] = useState<Pokemon>(pokemon.details);
 

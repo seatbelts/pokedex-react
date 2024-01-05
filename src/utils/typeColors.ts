@@ -1,6 +1,12 @@
-import { PokemonType } from 'pokenode-ts';
 import { colors } from '../styles/colors';
 
+/**
+ * @description A function that returns the proper color depending on a Pokemon type
+ *
+ * @function getTypeColor
+ * @param {string} pokemonType A string simbolizing a Pokemon Type
+ * @returns {string} A color code that corresponds with the proper type
+ */
 export const getTypeColor = (pokemonType: string): string => {
   const type: string = pokemonType;
 
