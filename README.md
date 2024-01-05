@@ -1,6 +1,23 @@
-# Getting Started with Create React App
+# Algotive Code Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Code challenge for Algotive. The current project implements a version of a [Pokedex](https://en.wikipedia.org/wiki/Gameplay_of_Pok%C3%A9mon#Pok%C3%A9dex) using the Open API from [PokeAPI](https://pokeapi.co/) for data retrieval.
+
+The project implements an Inifinite scroll for data pagination, as well as third Pary libraries:
+   - [charts.js](https://www.chartjs.org/)
+   - [react-youtube](https://github.com/tjallingt/react-youtube)
+   - [Tailwind](https://tailwindcss.com/)
+
+The project shows a list of Pokemons by default:
+
+
+![Screenshot 2024-01-05 at 12 54 17 a m](https://github.com/seatbelts/algotive-challenge/assets/9453053/b086851e-bac9-4b3a-8d95-7620ea7ec271)
+
+Upon clicking on a Pokemon, it will route into a details page where more information regardig the Pokemon is displayed (a table with information, a Stats table, and a relevant video):
+
+
+![Screenshot 2024-01-05 at 12 54 41 a m](https://github.com/seatbelts/algotive-challenge/assets/9453053/6d00d5ec-a951-4796-9049-cedb37fa3527)
+
+
 
 ## Available Scripts
 
@@ -41,6 +58,4 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
