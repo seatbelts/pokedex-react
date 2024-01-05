@@ -3,8 +3,8 @@ import { Pokemon } from 'pokenode-ts';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import PokemonDetailTable from '../PokemonDetailTable/PokemonDetailTable';
-import NoData from '../NoData/NoData';
 import StatsTable from '../StatsTable/StatsTable';
+import Loader from '../Loader/Loader';
 
 const PokemonDetails = () => {
   let { pokemonName } = useParams();
@@ -26,14 +26,14 @@ const PokemonDetails = () => {
 
   return (
     <div className="container">
-      {!isLoading ? (
+      {isLoading ? (
+        <Loader />
+      ) : (
         <div className="grid grid-cols-2">
           <PokemonDetailTable {...pokemon} />
 
           <StatsTable {...pokemon} />
         </div>
-      ) : (
-        <NoData />
       )}
     </div>
   );

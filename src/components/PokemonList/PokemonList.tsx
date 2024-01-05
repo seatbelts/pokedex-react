@@ -5,6 +5,7 @@ import { NamedAPIResource, NamedAPIResourceList, Pokemon } from 'pokenode-ts';
 import { Link } from 'react-router-dom';
 
 import { PokemonListI } from '../../interfaces/pokemon-list.interface';
+import Loader from '../Loader/Loader';
 
 const PokemonList = () => {
   const [pokemonList, setPokemonList] = useState([] as PokemonListI[]);
@@ -73,9 +74,7 @@ const PokemonList = () => {
   return (
     <div className="container min-h-screen">
       {isLoading ? (
-        <div className="items-center justify-center flex p-1">
-          <h2 className=" text-9xl animate-spin">🌀</h2>
-        </div>
+        <Loader />
       ) : (
         <div className="grid grid-cols-3 gap-3">
           {pokemonList.map((pokemon: PokemonListI, index: number) => {
