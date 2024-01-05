@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import PokemonDetailTable from '../PokemonDetailTable/PokemonDetailTable';
 import StatsTable from '../StatsTable/StatsTable';
 import Loader from '../Loader/Loader';
+import PokemonVideo from '../PokemonVideo/PokemonVideo';
 
 /**
  * @description This component renders details page with more info about a Pokemon.
@@ -42,8 +43,11 @@ const PokemonDetails = () => {
       ) : (
         <div className="grid grid-cols-2">
           <PokemonDetailTable {...pokemon} />
+          <div className="container grid grid-flow-row auto-rows-max">
+            <StatsTable {...pokemon} />
 
-          <StatsTable {...pokemon} />
+            <PokemonVideo {...pokemon} />
+          </div>
         </div>
       )}
     </div>
